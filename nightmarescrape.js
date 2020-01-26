@@ -1,10 +1,25 @@
-// go to twitter url ('https://twitter.com')
-// click and type into <input type='text' 
-// class='text-input email-input' and enter email address
-// click and type into <input type='password' 
-// class='text-input' and enter password
-// click on <a class='StaticLoggedOutHomePage-input
+const Nightmare = require('nightmare');
+const nightmare = Nightmare({ show: true });
 
-
-{/* <div class="css-1dbjc4n"></div> */}
-// <div class='css-901oao'></div><span></span>
+nightmare
+  .goto('https://www.twitter.com')
+  .wait(5000)
+  .type('input[name="session[username_or_email]"]', 'MooMooMofucka')
+  .wait(2000)
+  .click('input[type=\'password\']')
+  .wait(2000)
+  .type('input[type=\'password\']', 'Buster1991!')
+  .click('div.css-18t94o4')
+  .wait(8000)
+  .evaluate(function (result, done) {
+    let tweets = Array.from(document.querySelectorAll('span.css-901oao'))
+    .map(tweet => tweet.innerText.trim())
+    return tweets
+  })
+  .end()
+  .then(function (result) {
+    console.log(result)
+  })
+  .catch(function (error) {
+    console.error('Something went wrong')
+  });
