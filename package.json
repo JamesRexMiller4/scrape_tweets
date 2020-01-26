@@ -1,0 +1,20 @@
+{
+  "name": "scrape_tweets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "nightmarescrape.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JamesRexMiller4/scrape_tweets.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JamesRexMiller4/scrape_tweets/issues"
+  },
+  "homepage": "https://github.com/JamesRexMiller4/scrape_tweets#readme"
+}
